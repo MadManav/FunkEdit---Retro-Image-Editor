@@ -9,9 +9,7 @@ ALLOWED_EXTENSIONS = {'webp', 'gif', 'png', 'jpg', 'jpeg'}
 
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
-app.secret_key = 'the random string'
-
-
+app.secret_key = 'the rando
 def allowed_file(filename):
     return '.' in filename and \
            filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
