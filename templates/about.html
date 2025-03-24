@@ -3,20 +3,169 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Funk Edit - edit your images online</title>
+    <title>About FunkEdit - Our Story and Mission</title>
+    <meta name="description" content="Learn about FunkEdit - the premier image editing solution created for professionals and enthusiasts." />
+
+    <!-- Bootstrap CSS -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@700;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/aboutus.css') }}">
   </head>
-  <body>
-    <h1>i am not gonna tell u about me</h1>
+  <body class="light-mode">
+    <!-- Navbar -->
+    <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-sticky">
+    <div class="container">
+      <a class="navbar-brand" href="/">
+        <i class="fas fa-camera-retro me-2"></i>
+        FunkEdit
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarContent"
+        aria-controls="navbarContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarContent">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="/about">About</a>
+          </li>
+        </ul>
+        <div class="d-flex align-items-center">
+          <a href="https://buymeacoffee.com/manavdodani" target="_" class="donate-link me-3">
+            <i class="fas fa-coffee me-1"></i> Donate a Coffee
+          </a>
+          <div class="theme-toggle" id="themeToggle">
+            <i class="fas fa-moon"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+    <!-- Main Content -->
+    <div class="container main-container">
+      <h1 class="display-heading text-center">About FunkEdit</h1>
+
+      <div class="content-card">
+        <h2>Our Philosophy</h2>
+        <p>Welcome to FunkEdit - the premier image editing solution for professionals and enthusiasts alike. Our mission is to provide a sophisticated, powerful, and intuitive platform that elevates your creative workflow. Created by a team of experienced designers and developers, FunkEdit combines cutting-edge technology with an elegant user experience, setting a new standard in digital image editing.</p>
+        <p>At FunkEdit, we are committed to:</p>
+        <ul>
+          <li><strong>Precision and Quality</strong> - Ensuring every edit meets the highest standards with our advanced processing algorithms.</li>
+          <li><strong>Efficiency</strong> - Streamlining your workflow with an intuitive interface and smart tools.</li>
+          <li><strong>Innovation</strong> - Continuously evolving to incorporate the latest technologies and user feedback.</li>
+          <li><strong>User-Centric Design</strong> - Crafting an experience that is both powerful and accessible to users of all skill levels.</li>
+          <li><strong>Privacy and Security</strong> - Handling your images and data with the utmost care and confidentiality.</li>
+        </ul>
+        <p>Whether you're a professional photographer, a graphic designer, or a hobbyist, FunkEdit empowers you to achieve your creative vision with unparalleled ease and sophistication.</p>
+      </div>
+
+      <h2 class="text-center">Our Journey</h2>
+      <div class="timeline">
+        <div class="timeline-container left">
+          <div class="timeline-content">
+            <div class="timeline-year">2023</div>
+            <p>FunkEdit was conceived with a vision to redefine image editing. Our team began developing a platform that would combine power with elegance.</p>
+          </div>
+        </div>
+        <div class="timeline-container right">
+          <div class="timeline-content">
+            <div class="timeline-year">2024</div>
+            <p>After rigorous development and testing, FunkEdit launched, offering a comprehensive suite of editing tools designed for professionals.</p>
+          </div>
+        </div>
+        <div class="timeline-container left">
+          <div class="timeline-content">
+            <div class="timeline-year">2025</div>
+            <p>FunkEdit 2.0 was released, introducing advanced features and enhancements based on user feedback. We now serve a growing community of creatives worldwide.</p>
+          </div>
+        </div>
+        <div class="timeline-container right">
+          <div class="timeline-content">
+            <div class="timeline-year">Today</div>
+            <p>We continue to innovate, ensuring FunkEdit remains at the forefront of image editing technology, while maintaining our commitment to quality and user satisfaction.</p>
+          </div>
+        </div>
+      </div>
+
+      <h2 class="text-center">Meet The Developer</h2>
+      <div class="row team-section">
+        <div class="col-md-4">
+          <div class="team-card">
+            <div class="team-image">
+              <img src="{{ url_for('static', filename='images/manav.png') }}" alt="Developer" />
+            </div>
+            <h3 class="team-name">Manav Dodani</h3>
+            <div class="team-role">Developer</div>
+            <p>Hello, I'm Manav Dodani—a dedicated developer passionate about creating elegant, intuitive digital experiences. By blending creative design with robust coding, I transform complex challenges into seamless, user-friendly solutions.</p>
+            <div class="team-social">
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-linkedin"></i></a>
+              <a href="#"><i class="fab fa-github"></i></a>
+            </div>
+          </div>
+        </div>
+    <!-- Bootstrap JS Bundle -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
-  </body>
+
+    <!-- Custom JavaScript -->
+    <script>
+      // Theme toggle functionality
+      const themeToggle = document.getElementById('themeToggle');
+      themeToggle.addEventListener('click', function() {
+        if (document.body.classList.contains('light-mode')) {
+          document.body.classList.remove('light-mode');
+          document.body.classList.add('dark-mode');
+          themeToggle.querySelector('i').classList.replace('fa-moon', 'fa-sun');
+        } else {
+          document.body.classList.remove('dark-mode');
+          document.body.classList.add('light-mode');
+          themeToggle.querySelector('i').classList.replace('fa-sun', 'fa-moon');
+        }
+        const currentTheme = document.body.classList.contains('dark-mode') ? 'dark' : 'light';
+        localStorage.setItem('theme', currentTheme);
+      });
+
+      // Load saved theme preference
+      document.addEventListener('DOMContentLoaded', function() {
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+          document.body.classList.remove('light-mode');
+          document.body.classList.add('dark-mode');
+          themeToggle.querySelector('i').classList.replace('fa-moon', 'fa-sun');
+        }
+      });
+    </script>
+  <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'924517eb1db3adb9',t:'MTc0MjY0MDI2Mi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>

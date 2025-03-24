@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Funk Edit - Retro Maximalist Vibes</title>
+    <title>FunkEdit - Professional Image Editor</title>
 
     <!-- Bootstrap CSS -->
     <link
@@ -13,150 +13,29 @@
       crossorigin="anonymous"
     />
 
-    <!-- Google Fonts: Retro Pixel Font -->
+    <!-- Google Fonts: Modern Display and Sans Serif -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@700;900&display=swap"
       rel="stylesheet"
     />
 
-    <!-- Custom CSS for Retro Maximalist Look -->
-    <style>
-      /* Retro animated gradient background */
-      body {
-        background: linear-gradient(45deg, #ff0099, #493240, #00ffff);
-        background-size: 400% 400%;
-        animation: gradientBG 15s ease infinite;
-        color: #fff;
-        font-family: "Press Start 2P", cursive;
-        min-height: 100vh;
-        margin: 0;
-        padding: 0;
-      }
-      @keyframes gradientBG {
-        0% {
-          background-position: 0% 50%;
-        }
-        50% {
-          background-position: 100% 50%;
-        }
-        100% {
-          background-position: 0% 50%;
-        }
-      }
+    <!-- Font Awesome for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
 
-      /* Navbar styling */
-      .navbar {
-        background: rgba(0, 0, 0, 0.8) !important;
-        backdrop-filter: blur(4px);
-      }
-      .navbar-brand {
-        font-size: 1.5rem;
-        color: #fff !important;
-      }
-      .navbar-brand img {
-        margin-right: 8px;
-      }
-      .nav-link {
-        color: #fff !important;
-      }
-      .nav-link.active,
-      .nav-link:hover {
-        color: #ffcc00 !important;
-      }
-      .btn-outline-light {
-        border-color: #ffcc00;
-        color: #ffcc00;
-      }
-      .btn-outline-light:hover {
-        background-color: #ffcc00;
-        color: #000;
-      }
-
-      /* Main container */
-      .container {
-        flex: 1;
-        margin-top: 40px;
-        padding-bottom: 40px;
-      }
-
-      /* Retro heading */
-      h1 {
-        text-shadow: 2px 2px 5px #ffcc00;
-        margin-bottom: 30px;
-      }
-
-      /* Form Card with Retro Maximalist Borders */
-      .edit-card {
-        background: rgba(0, 0, 0, 0.7);
-        border: 3px solid #ffcc00;
-        border-radius: 15px;
-        box-shadow: 0 0 20px #ffcc00;
-        padding: 30px;
-        margin-bottom: 40px;
-      }
-
-      /* Form labels and inputs */
-      .form-label {
-        font-weight: 600;
-      }
-      .form-select,
-      .form-control {
-        border-radius: 8px;
-      }
-
-      /* Retro Submit Button */
-      .btn-success {
-        background: #ffcc00 !important;
-        color: #000;
-        border: none;
-        border-radius: 8px;
-        padding: 10px 20px;
-        transition: transform 0.2s;
-      }
-      .btn-success:hover {
-        transform: scale(1.1);
-      }
-
-      /* Retro footer */
-      footer {
-        background: rgba(0, 0, 0, 0.8);
-        text-align: center;
-        padding: 10px;
-        font-size: 0.8rem;
-      }
-      footer p {
-        margin: 0;
-      }
-
-      /* Retro decorative icons row */
-      .retro-icons {
-        display: flex;
-        justify-content: center;
-        gap: 20px;
-        margin: 30px 0;
-      }
-      .retro-icons img {
-        width: 80px;
-        height: 80px;
-        transition: transform 0.3s;
-      }
-      .retro-icons img:hover {
-        transform: rotate(20deg) scale(1.2);
-      }
-    </style>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
   </head>
-  <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark shadow-sm">
-      <div class="container-fluid px-4">
+  <body class="light-mode">
+    <!-- Navbar - Improved positioning with correct item alignment -->
+    <nav class="navbar navbar-expand-lg navbar-sticky">
+      <div class="container">
         <a class="navbar-brand" href="#">
-          <img
-            src="https://cdn-icons-png.flaticon.com/512/929/929452.png"
-            alt="Retro Icon"
-            width="40"
-            height="40"
-          />
+          <i class="fas fa-camera-retro me-2"></i>
           FunkEdit
         </a>
         <button
@@ -171,48 +50,26 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarContent">
-          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
             <li class="nav-item">
               <a class="nav-link active" href="/">Home</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/about">About</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/docs">Docs</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                id="moreDropdown"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                More
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="moreDropdown">
-                <li><a class="dropdown-item" href="/docs">Docs</a></li>
-                <li><a class="dropdown-item" href="#">Another Action</a></li>
-                <li><hr class="dropdown-divider" /></li>
-                <li>
-                  <a class="dropdown-item" href="#">Something Else</a>
-                </li>
-              </ul>
-            </li>
           </ul>
-          <form class="d-flex ms-2" role="search">
-            <input
-              class="form-control me-2"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
-            <button class="btn btn-outline-light" type="submit">
-              Search
-            </button>
-          </form>
+          <div class="d-flex align-items-center">
+            <a
+              href="https://buymeacoffee.com/manavdodani"
+              target="_"
+              class="donate-link me-3"
+            >
+              <i class="fas fa-coffee me-1"></i> Donate a Coffee
+            </a>
+            <div class="theme-toggle" id="themeToggle">
+              <i class="fas fa-moon"></i>
+            </div>
+          </div>
         </div>
       </div>
     </nav>
@@ -220,7 +77,7 @@
     <!-- Flash Messages (Jinja Template) -->
     {% with messages = get_flashed_messages(with_categories=true) %}
     {% if messages %}
-      <div class="container mt-3">
+      <div class="container flash-container">
         {% for category, message in messages %}
           <div
             class="alert alert-success alert-dismissible fade show"
@@ -239,80 +96,320 @@
     {% endif %}
     {% endwith %}
 
-    <!-- Main Content -->
-    <div class="container">
-      <!-- Retro Decorative Icons Row -->
-      <div class="retro-icons">
-        <img
-          src="https://cdn-icons-png.flaticon.com/512/921/921653.png"
-          alt="Retro Star"
-        />
-        <img
-          src="https://cdn-icons-png.flaticon.com/512/921/921669.png"
-          alt="Retro Planet"
-        />
-        <img
-          src="https://cdn-icons-png.flaticon.com/512/921/921681.png"
-          alt="Retro Comet"
-        />
-        <img
-          src="https://cdn-icons-png.flaticon.com/512/921/921695.png"
-          alt="Retro UFO"
-        />
-      </div>
+    <!-- Main Content - Compact Layout -->
+    <div class="container main-container">
+      <div class="row">
+        <!-- Left side: Hero text and form -->
+        <div class="col-lg-6">
+          <div class="hero-section mb-4">
+            <h1 class="display-heading">Professional Image Editor</h1>
+            <p class="subheading">
+              Transform your images with precision, speed, and elegance.
+            </p>
+          </div>
 
-      <h1 class="text-center">
-        Funk Edit - Retro Maximalist Vibes
-      </h1>
-      <div class="edit-card mx-auto" style="max-width: 600px;">
-        <form action="/edit" method="post" enctype="multipart/form-data">
-          <div class="mb-3">
-            <label for="formFileLg" class="form-label">
-              Select an Image to Edit
-            </label>
-            <input
-              class="form-control form-control-lg"
-              id="formFileLg"
-              name="file"
-              type="file"
-              required
-            />
+          <div class="edit-card">
+            <form action="/edit" method="post" enctype="multipart/form-data">
+              <div class="mb-3">
+                <label for="formFileLg" class="form-label">
+                  Select an Image to Edit
+                </label>
+                <!-- Note the accept attribute limiting allowed file types -->
+                <input
+                  class="form-control form-control-lg"
+                  id="formFileLg"
+                  name="file"
+                  type="file"
+                  accept=".png,.jpg,.jpeg,.webp"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="operation" class="form-label">
+                  Choose an Operation
+                </label>
+                <select
+                  id="operation"
+                  name="operation"
+                  class="form-select form-select-lg"
+                  onchange="toggleQualityControl(this.value)"
+                  required
+                >
+                  <option selected disabled>-- Select --</option>
+                  <option value="compress" class="new-feature">
+                    Compress Image
+                  </option>
+                  <option value="cpng">Convert to PNG</option>
+                  <option value="cwebp">Convert to WEBP</option>
+                  <option value="cjpeg">Convert to JPEG</option>
+                  <option value="cgray">Convert to Grayscale</option>
+                </select>
+              </div>
+
+              <!-- Quality control section - only visible for compression -->
+              <div id="qualityControl" class="quality-control" style="display: none;">
+                <label for="quality" class="form-label">
+                  Compression Quality
+                </label>
+                <div class="d-flex align-items-center">
+                  <span class="me-2">Low</span>
+                  <input
+                    type="range"
+                    class="form-range flex-grow-1 quality-slider"
+                    id="quality"
+                    name="quality"
+                    min="1"
+                    max="100"
+                    value="70"
+                  />
+                  <span class="ms-2">High</span>
+                </div>
+                <div class="text-center mt-2">
+                  <span id="qualityValue">70%</span>
+                </div>
+                <div class="mt-2 text-center small text-muted">
+                  Lower quality = smaller file size
+                </div>
+              </div>
+
+              <div class="text-center mt-3">
+                <button type="submit" class="btn btn-primary">
+                  Process Image
+                </button>
+              </div>
+            </form>
           </div>
-          <div class="mb-3">
-            <label for="operation" class="form-label">
-              Choose an Operation
-            </label>
-            <select
-              id="operation"
-              name="operation"
-              class="form-select form-select-lg"
-              required
-            >
-              <option selected disabled>-- Select --</option>
-              <option value="cpng">Convert to PNG</option>
-              <option value="cwebp">Convert to WEBP</option>
-              <option value="cjpeg">Convert to JPEG</option>
-              <option value="cgray">Convert to Grayscale</option>
-            </select>
+        </div>
+
+        <!-- Right side: Image preview and download -->
+        <div class="col-lg-6">
+          <div class="preview-card">
+            <div class="preview-header">
+              <h3 class="preview-title">
+                <i class="fas fa-image me-2"></i>
+                Image Preview
+              </h3>
+            </div>
+            <div class="preview-body" id="imagePreview">
+              <div class="empty-preview">
+                <i class="fas fa-cloud-upload-alt"></i>
+                <p>Your processed image will appear here</p>
+              </div>
+
+              <!-- Hidden by default, shown when image is processed -->
+              <div class="processed-preview" style="display: none;">
+                <img
+                  id="processedImage"
+                  src="#"
+                  alt="Processed Image"
+                  class="img-fluid preview-img"
+                />
+                <div class="image-details mt-3">
+                  <div class="detail-item">
+                    <span class="detail-label">File size:</span>
+                    <span class="detail-value" id="fileSize">-</span>
+                  </div>
+                  <div class="detail-item">
+                    <span class="detail-label">Dimensions:</span>
+                    <span class="detail-value" id="dimensions">-</span>
+                  </div>
+                  <div class="detail-item">
+                    <span class="detail-label">Format:</span>
+                    <span class="detail-value" id="format">-</span>
+                  </div>
+                </div>
+                <div class="preview-actions mt-4">
+                  <a
+                    href="#"
+                    id="downloadBtn"
+                    class="btn btn-primary btn-download"
+                    download
+                  >
+                    <i class="fas fa-download me-2"></i>
+                    Download Image
+                  </a>
+                  <button id="newEditBtn" class="btn btn-outline-primary">
+                    <i class="fas fa-redo me-2"></i>
+                    New Edit
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="text-center">
-            <button type="submit" class="btn btn-success">
-              Submit
-            </button>
-          </div>
-        </form>
+        </div>
       </div>
     </div>
 
-    <!-- Footer -->
-    <footer>
-      <p>&copy; 2025 FunkEdit. All rights reserved. Retro Edition</p>
-    </footer>
-
-    <!-- Bootstrap JS Bundle -->
+    <!-- Bootstrap JS Bundle with Popper -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
+
+    <!-- Custom JavaScript -->
+    <script>
+      // Theme toggle functionality
+      const themeToggle = document.getElementById("themeToggle");
+      themeToggle.addEventListener("click", function () {
+        document.body.classList.toggle("dark-mode");
+        const icon = themeToggle.querySelector("i");
+        if (document.body.classList.contains("dark-mode")) {
+          icon.classList.remove("fa-moon");
+          icon.classList.add("fa-sun");
+        } else {
+          icon.classList.remove("fa-sun");
+          icon.classList.add("fa-moon");
+        }
+
+        // Save preference in localStorage
+        const currentTheme = document.body.classList.contains("dark-mode")
+          ? "dark"
+          : "light";
+        localStorage.setItem("theme", currentTheme);
+      });
+
+      // Load saved theme preference
+      document.addEventListener("DOMContentLoaded", function () {
+        const savedTheme = localStorage.getItem("theme");
+        if (savedTheme === "dark") {
+          document.body.classList.add("dark-mode");
+          const icon = themeToggle.querySelector("i");
+          icon.classList.remove("fa-moon");
+          icon.classList.add("fa-sun");
+        }
+      });
+
+      // Quality slider functionality
+      const qualitySlider = document.getElementById("quality");
+      const qualityValue = document.getElementById("qualityValue");
+
+      qualitySlider.addEventListener("input", function () {
+        qualityValue.textContent = this.value + "%";
+      });
+
+      // Toggle quality control visibility
+      function toggleQualityControl(operation) {
+        const qualityControl = document.getElementById("qualityControl");
+        if (operation === "compress") {
+          qualityControl.style.display = "block";
+        } else {
+          qualityControl.style.display = "none";
+        }
+      }
+
+      // Reset form and preview
+      document.getElementById("newEditBtn").addEventListener("click", function () {
+        document.querySelector(".empty-preview").style.display = "flex";
+        document.querySelector(".processed-preview").style.display = "none";
+        document.querySelector("form").reset();
+        document.getElementById("qualityControl").style.display = "none";
+      });
+
+      // Show processed image with metadata
+      function showProcessedImage(imageSrc, fileSize, dimensions, format) {
+        document.getElementById("processedImage").src = imageSrc;
+        document.getElementById("fileSize").textContent = fileSize;
+        document.getElementById("dimensions").textContent = dimensions;
+        document.getElementById("format").textContent = format;
+
+        // Set proper download attributes
+        const downloadBtn = document.getElementById("downloadBtn");
+        downloadBtn.href = imageSrc;
+        // Extract filename from path
+        const filename = imageSrc.split("/").pop();
+        downloadBtn.setAttribute("download", filename);
+
+        document.querySelector(".empty-preview").style.display = "none";
+        document.querySelector(".processed-preview").style.display = "block";
+      }
+
+      // Form submission handling with AJAX
+      document.querySelector("form").addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        if (document.getElementById("formFileLg").files.length === 0) {
+          return; // Don't submit if no file selected
+        }
+
+        const formData = new FormData(this);
+        const submitBtn = this.querySelector('button[type="submit"]');
+
+        // Disable button and show loading state
+        submitBtn.disabled = true;
+        submitBtn.innerHTML =
+          '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Processing...';
+
+        fetch("/edit", {
+          method: "POST",
+          body: formData,
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            // Enable button
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = "Process Image";
+
+            if (data.success) {
+              // Show the processed image
+              showProcessedImage(
+                data.processed_url,
+                data.file_size,
+                data.dimensions,
+                data.format
+              );
+
+              // Show success message if provided
+              if (data.message) {
+                const alertDiv = document.createElement("div");
+                alertDiv.className =
+                  "alert alert-success alert-dismissible fade show";
+                alertDiv.role = "alert";
+                alertDiv.innerHTML = `
+                  <strong>Success!</strong> ${data.message}
+                  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                `;
+                const flashContainer = document.querySelector(".flash-container");
+                if (flashContainer) {
+                  flashContainer.appendChild(alertDiv);
+                }
+              }
+            } else {
+              const alertDiv = document.createElement("div");
+              alertDiv.className =
+                "alert alert-danger alert-dismissible fade show";
+              alertDiv.role = "alert";
+              alertDiv.innerHTML = `
+                <strong>Error!</strong> ${
+                  data.error || "An unknown error occurred."
+                }
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              `;
+              const flashContainer = document.querySelector(".flash-container");
+              if (flashContainer) {
+                flashContainer.appendChild(alertDiv);
+              }
+            }
+          })
+          .catch((error) => {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = "Process Image";
+
+            const alertDiv = document.createElement("div");
+            alertDiv.className = "alert alert-danger alert-dismissible fade show";
+            alertDiv.role = "alert";
+            alertDiv.innerHTML = `
+              <strong>Error!</strong> ${
+                error.message || "Failed to process the image."
+              }
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            `;
+            const flashContainer = document.querySelector(".flash-container");
+            if (flashContainer) {
+              flashContainer.appendChild(alertDiv);
+            }
+          });
+      });
+    </script>
   </body>
 </html>
