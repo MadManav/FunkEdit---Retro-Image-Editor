@@ -309,7 +309,7 @@
 
       // Show processed image with metadata
       function showProcessedImage(imageSrc, fileSize, dimensions, format) {
-        document.getElementById("processedImage").src = imageSrc;
+        document.getElementById("processedImage").src = imageSrc + '?t=' + new Date().getTime();
         document.getElementById("fileSize").textContent = fileSize;
         document.getElementById("dimensions").textContent = dimensions;
         document.getElementById("format").textContent = format;
